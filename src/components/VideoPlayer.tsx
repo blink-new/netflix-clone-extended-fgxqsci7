@@ -6,6 +6,8 @@ import {
   Volume2, 
   VolumeX, 
   Maximize,
+  AlertCircle,
+  RefreshCw
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -52,8 +54,37 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
     };
 
     const handleError = (e: Event) => {
-      console.error('Video error:', e);
-      setError('An error occurred while trying to play the video.');
+      const videoElement = e.target as HTMLVideoElement;
+      const error = videoElement.error;
+      
+      console.error('Video error details:', {
+        code: error?.code,
+        message: error?.message,
+        videoSrc: videoElement.src,
+        networkState: videoElement.networkState,
+        readyState: videoElement.readyState
+      });
+      
+      let errorMessage = 'An error occurred while trying to play the video.';
+      
+      if (error) {
+        switch (error.code) {
+          case 1:
+            errorMessage = 'The video loading was aborted.';
+            break;
+          case 2:
+            errorMessage = 'A network error occurred while loading the video.';
+            break;
+          case 3:
+            errorMessage = 'The video format is not supported or the file is corrupted.';
+            break;
+          case 4:
+            errorMessage = 'The video source could not be loaded. This might be due to CORS restrictions.';
+            break;
+        }
+      }
+      
+      setError(errorMessage);
       setIsLoading(false);
     };
 
@@ -77,8 +108,6 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
     video.addEventListener('play', handlePlay);
     video.addEventListener('pause', handlePause);
     document.addEventListener('fullscreenchange', handleFullscreenChange);
-
-    video.crossOrigin = 'anonymous';
 
     return () => {
       video.removeEventListener('loadedmetadata', handleLoadedMetadata);
@@ -176,7 +205,14 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
               {error}
             </p>
             <Button
-              onClick={() => setError(null)} // Simple retry by clearing error
+              onClick={() => {
+                setError(null);
+                setIsLoading(true);
+                // Force video reload
+                if (videoRef.current) {
+                  videoRef.current.load();
+                }
+              }}
               variant="outline"
               className="border-gray-600 text-gray-300 hover:bg-gray-800"
             >
