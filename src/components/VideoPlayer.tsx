@@ -65,7 +65,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
         readyState: videoElement.readyState
       });
       
-      let errorMessage = 'An error occurred while trying to play the video.';
+      let errorMessage = 'This video is temporarily unavailable.';
       
       if (error) {
         switch (error.code) {
@@ -73,13 +73,13 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
             errorMessage = 'The video loading was aborted.';
             break;
           case 2:
-            errorMessage = 'A network error occurred while loading the video.';
+            errorMessage = 'Network error: Please check your connection and try again.';
             break;
           case 3:
-            errorMessage = 'The video format is not supported or the file is corrupted.';
+            errorMessage = 'This video format is not supported by your browser.';
             break;
           case 4:
-            errorMessage = 'The video source could not be loaded. This might be due to CORS restrictions.';
+            errorMessage = 'Unable to load this video. It may be temporarily unavailable or restricted.';
             break;
         }
       }
@@ -200,25 +200,30 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
         <div className="absolute inset-0 flex items-center justify-center bg-gray-900 z-10">
           <div className="text-center max-w-md mx-auto p-6">
             <AlertCircle className="h-16 w-16 text-red-500 mx-auto mb-4" />
-            <h3 className="text-white text-lg font-semibold mb-2">Playback Error</h3>
+            <h3 className="text-white text-lg font-semibold mb-2">Video Unavailable</h3>
             <p className="text-gray-400 text-sm mb-6">
               {error}
             </p>
-            <Button
-              onClick={() => {
-                setError(null);
-                setIsLoading(true);
-                // Force video reload
-                if (videoRef.current) {
-                  videoRef.current.load();
-                }
-              }}
-              variant="outline"
-              className="border-gray-600 text-gray-300 hover:bg-gray-800"
-            >
-              <RefreshCw className="h-4 w-4 mr-2" />
-              Try Again
-            </Button>
+            <div className="space-y-3">
+              <Button
+                onClick={() => {
+                  setError(null);
+                  setIsLoading(true);
+                  // Force video reload
+                  if (videoRef.current) {
+                    videoRef.current.load();
+                  }
+                }}
+                variant="outline"
+                className="border-gray-600 text-gray-300 hover:bg-gray-800 w-full"
+              >
+                <RefreshCw className="h-4 w-4 mr-2" />
+                Try Again
+              </Button>
+              <p className="text-xs text-gray-500">
+                Some classic films may have playback issues due to licensing or format restrictions.
+              </p>
+            </div>
           </div>
         </div>
       )}

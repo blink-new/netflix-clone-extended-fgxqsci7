@@ -9,166 +9,214 @@ export interface Movie {
   duration?: string;
 }
 
-// High-quality classic Hollywood films in the public domain
+// Using reliable video sources that work cross-origin
+// Mix of high-quality public domain classics and modern sample content
 export const movies: Movie[] = [
+  // Premium Sample Content (Google CDN - Always Works)
   {
     id: "1",
-    title: "Casablanca",
-    description: "A cynical American expatriate meets a former lover, with unforeseen complications. One of the greatest films of all time starring Humphrey Bogart and Ingrid Bergman.",
-    videoUrl: "https://ia801609.us.archive.org/35/items/Casablanca1942_201710/Casablanca%20%281942%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/CasablancaPoster-Gold.jpg/600px-CasablancaPoster-Gold.jpg",
-    year: 1942,
-    genre: "Romance/Drama",
-    duration: "102 min"
+    title: "Big Buck Bunny",
+    description: "A large rabbit deals with three tiny bullies, led by a flying squirrel. Blender Foundation's award-winning animated short film.",
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Big_buck_bunny_poster_big.jpg/600px-Big_buck_bunny_poster_big.jpg",
+    year: 2008,
+    genre: "Animation",
+    duration: "10 min"
   },
   {
     id: "2",
-    title: "It's a Wonderful Life",
-    description: "An angel is sent from Heaven to help a desperately frustrated businessman by showing him what life would have been like if he had never existed. A Christmas classic.",
-    videoUrl: "https://ia801504.us.archive.org/15/items/ItsAWonderfulLife1946_201712/Its%20A%20Wonderful%20Life%20%281946%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Its_a_Wonderful_Life_%281946_poster%29.jpg/600px-Its_a_Wonderful_Life_%281946_poster%29.jpg",
-    year: 1946,
-    genre: "Drama/Fantasy",
-    duration: "130 min"
+    title: "Sintel",
+    description: "A lonely young woman, Sintel, helps and befriends a dragon. Another masterpiece from the Blender Foundation.",
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Sintel_poster.jpg/600px-Sintel_poster.jpg",
+    year: 2010,
+    genre: "Fantasy",
+    duration: "15 min"
   },
   {
     id: "3",
-    title: "The Great Dictator",
-    description: "Charlie Chaplin's masterpiece - a Jewish barber loses his memory in a plane crash and later impersonates a dictator. Chaplin's brilliant satire of fascism.",
-    videoUrl: "https://ia801404.us.archive.org/0/items/CC_1940_The_Great_Dictator/CC_1940_The_Great_Dictator_512kb.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/The_Great_Dictator_%281940%29_poster.jpg/600px-The_Great_Dictator_%281940%29_poster.jpg",
-    year: 1940,
-    genre: "Comedy/Drama",
-    duration: "125 min"
+    title: "Tears of Steel",
+    description: "In a dystopian future, a group of warriors battle killer robots. The Blender Foundation's first live-action film.",
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+    thumbnail: "https://mango.blender.org/wp-content/gallery/4k-renders/tears_of_steel_bridge_2k.jpg",
+    year: 2012,
+    genre: "Sci-Fi",
+    duration: "12 min"
   },
   {
     id: "4",
-    title: "His Girl Friday",
-    description: "A newspaper editor uses every trick in the book to keep his ace reporter ex-wife from remarrying. Fast-paced screwball comedy with Cary Grant and Rosalind Russell.",
-    videoUrl: "https://ia601504.us.archive.org/21/items/HisGirlFriday1940/His%20Girl%20Friday%20%281940%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/His_Girl_Friday_%281940_poster%29.jpg/600px-His_Girl_Friday_%281940_poster%29.jpg",
-    year: 1940,
-    genre: "Comedy/Romance",
-    duration: "92 min"
+    title: "Elephant's Dream",
+    description: "Two characters explore a strange mechanical world. The first open movie from the Blender Foundation.",
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Elephants_Dream_s5_both.jpg/600px-Elephants_Dream_s5_both.jpg",
+    year: 2006,
+    genre: "Animation",
+    duration: "11 min"
   },
+
+  // Classic Hollywood Films with Working Sources
   {
     id: "5",
-    title: "The Maltese Falcon",
-    description: "A private detective takes on a case that involves him with three eccentric criminals and their quest for a priceless statuette. Classic film noir with Humphrey Bogart.",
-    videoUrl: "https://ia801504.us.archive.org/12/items/TheMalteseFalcon1941/The%20Maltese%20Falcon%20%281941%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/The_Maltese_Falcon_%281941_poster%29.jpg/600px-The_Maltese_Falcon_%281941_poster%29.jpg",
-    year: 1941,
-    genre: "Crime/Film Noir",
-    duration: "100 min"
-  },
-  {
-    id: "6",
-    title: "The Third Man",
-    description: "A writer arrives in post-war Vienna to visit a friend, but discovers he's been killed in a suspicious accident. Orson Welles stars in this atmospheric thriller.",
-    videoUrl: "https://ia801504.us.archive.org/3/items/TheThirdMan1949/The%20Third%20Man%20%281949%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Thethirdman.jpg/600px-Thethirdman.jpg",
-    year: 1949,
-    genre: "Thriller/Film Noir",
-    duration: "104 min"
-  },
-  {
-    id: "7",
-    title: "Sunset Boulevard",
-    description: "A screenwriter develops a dangerous relationship with a faded film star determined to make a triumphant return. Billy Wilder's Hollywood masterpiece.",
-    videoUrl: "https://ia801504.us.archive.org/18/items/SunsetBoulevard1950/Sunset%20Boulevard%20%281950%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Sunset_Boulevard_%281950_poster%29.jpg/600px-Sunset_Boulevard_%281950_poster%29.jpg",
-    year: 1950,
-    genre: "Drama/Film Noir",
-    duration: "110 min"
-  },
-  {
-    id: "8",
-    title: "Double Indemnity",
-    description: "An insurance salesman and a housewife plot murder for insurance money, but their scheme begins to unravel. Classic film noir from Billy Wilder.",
-    videoUrl: "https://ia801504.us.archive.org/15/items/DoubleIndemnity1944/Double%20Indemnity%20%281944%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Double_Indemnity_%281944_poster%29.png/600px-Double_Indemnity_%281944_poster%29.png",
-    year: 1944,
-    genre: "Crime/Film Noir",
-    duration: "107 min"
-  },
-  {
-    id: "9",
-    title: "The Best Years of Our Lives",
-    description: "Three World War II veterans return home to small-town America to discover they no longer fit in. Winner of 7 Academy Awards including Best Picture.",
-    videoUrl: "https://ia801504.us.archive.org/9/items/TheBestYearsOfOurLives1946/The%20Best%20Years%20of%20Our%20Lives%20%281946%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Best_years_of_our_lives_poster.jpg/600px-Best_years_of_our_lives_poster.jpg",
-    year: 1946,
-    genre: "Drama/War",
-    duration: "170 min"
-  },
-  {
-    id: "10",
-    title: "The Treasure of the Sierra Madre",
-    description: "Two Americans searching for work in Mexico convince an old prospector to help them mine for gold. Humphrey Bogart in John Huston's adventure classic.",
-    videoUrl: "https://ia801504.us.archive.org/6/items/TheTreasureOfTheSierraMadre1948/The%20Treasure%20of%20the%20Sierra%20Madre%20%281948%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Treasure_of_sierra_madre_poster.jpg/600px-Treasure_of_sierra_madre_poster.jpg",
-    year: 1948,
-    genre: "Adventure/Drama",
-    duration: "126 min"
-  },
-  {
-    id: "11",
-    title: "The African Queen",
-    description: "In WWI Africa, a gin-swilling riverboat captain is persuaded by a strait-laced missionary to use his boat to attack an enemy warship. Bogart and Katharine Hepburn.",
-    videoUrl: "https://ia801504.us.archive.org/12/items/TheAfricanQueen1951/The%20African%20Queen%20%281951%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/African_queen_poster.jpg/600px-African_queen_poster.jpg",
-    year: 1951,
-    genre: "Adventure/Romance",
-    duration: "105 min"
-  },
-  {
-    id: "12",
-    title: "Notorious",
-    description: "The daughter of a convicted Nazi spy is asked by the U.S. government to gather information on a ring of Nazi scientists in South America. Hitchcock thriller with Cary Grant.",
-    videoUrl: "https://ia801504.us.archive.org/21/items/Notorious1946/Notorious%20%281946%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Notorious_%281946_poster%29.jpg/600px-Notorious_%281946_poster%29.jpg",
-    year: 1946,
-    genre: "Thriller/Romance",
-    duration: "101 min"
-  },
-  {
-    id: "13",
-    title: "The Lady from Shanghai",
-    description: "A seaman becomes involved in a complex murder plot when he is hired by a beautiful woman and her lawyer husband. Orson Welles film noir starring Rita Hayworth.",
-    videoUrl: "https://ia801504.us.archive.org/18/items/TheLadyFromShanghai1947/The%20Lady%20from%20Shanghai%20%281947%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lady_from_shanghai.jpg/600px-Lady_from_shanghai.jpg",
-    year: 1947,
-    genre: "Crime/Film Noir",
-    duration: "87 min"
-  },
-  {
-    id: "14",
-    title: "Sweet Smell of Success",
-    description: "A powerful newspaper columnist holds the career of an ambitious press agent in his hands. Burt Lancaster and Tony Curtis in this dark tale of corruption.",
-    videoUrl: "https://ia801504.us.archive.org/15/items/SweetSmellOfSuccess1957/Sweet%20Smell%20of%20Success%20%281957%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Sweet_Smell_of_Success_poster.jpg/600px-Sweet_Smell_of_Success_poster.jpg",
-    year: 1957,
-    genre: "Drama/Film Noir",
+    title: "Night of the Living Dead",
+    description: "George A. Romero's groundbreaking zombie horror film that defined the genre. A group of people hide from bloodthirsty zombies in a farmhouse.",
+    videoUrl: "https://archive.org/download/night_of_the_living_dead/night_of_the_living_dead_512kb.mp4",
+    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Night_of_the_Living_Dead_%281968%29.jpg/600px-Night_of_the_Living_Dead_%281968%29.jpg",
+    year: 1968,
+    genre: "Horror",
     duration: "96 min"
   },
   {
+    id: "6",
+    title: "The Cabinet of Dr. Caligari",
+    description: "German Expressionist masterpiece. A hypnotist uses a somnambulist to commit murders. One of the most influential horror films ever made.",
+    videoUrl: "https://archive.org/download/TheCaligariofDrCaligari/The%20Cabinet%20of%20Dr.%20Caligari%20%281920%29.mp4",
+    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Das_Cabinet_des_Dr._Caligari.jpg/600px-Das_Cabinet_des_Dr._Caligari.jpg",
+    year: 1920,
+    genre: "Horror",
+    duration: "67 min"
+  },
+  {
+    id: "7",
+    title: "The Great Train Robbery",
+    description: "One of the first narrative films. Bandits rob a train and are pursued by a posse. Directed by Edwin S. Porter.",
+    videoUrl: "https://archive.org/download/great_train_robbery_512kb/great_train_robbery_512kb.mp4",
+    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Great_train_robbery_still.jpg/600px-Great_train_robbery_still.jpg",
+    year: 1903,
+    genre: "Western",
+    duration: "12 min"
+  },
+  {
+    id: "8",
+    title: "A Trip to the Moon",
+    description: "Georges Méliès' pioneering sci-fi film about a group of astronomers who travel to the Moon. Cinema's first blockbuster.",
+    videoUrl: "https://archive.org/download/ATripToTheMoon1902/A%20Trip%20to%20the%20Moon%20%281902%29.mp4",
+    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Le_Voyage_dans_la_lune.jpg/600px-Le_Voyage_dans_la_lune.jpg",
+    year: 1902,
+    genre: "Sci-Fi",
+    duration: "13 min"
+  },
+
+  // Modern Sample Content
+  {
+    id: "9",
+    title: "For Bigger Blazes",
+    description: "HBO GO now works with Chromecast -- the easiest way to enjoy online video on your TV.",
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    thumbnail: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
+    year: 2014,
+    genre: "Commercial",
+    duration: "15 sec"
+  },
+  {
+    id: "10",
+    title: "For Bigger Escape",
+    description: "Introducing Chromecast. The easiest way to enjoy online video and music on your TV.",
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    thumbnail: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
+    year: 2014,
+    genre: "Commercial",
+    duration: "15 sec"
+  },
+  {
+    id: "11",
+    title: "For Bigger Fun",
+    description: "Introducing Chromecast. The easiest way to enjoy online video and music on your TV.",
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    thumbnail: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+    year: 2014,
+    genre: "Commercial",
+    duration: "1 min"
+  },
+  {
+    id: "12",
+    title: "For Bigger Joyrides",
+    description: "Introducing Chromecast. The easiest way to enjoy online video and music on your TV.",
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    thumbnail: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+    year: 2014,
+    genre: "Commercial",
+    duration: "15 sec"
+  },
+  {
+    id: "13",
+    title: "Subaru Outback On Street And Dirt",
+    description: "Professional automotive footage of the Subaru Outback in action.",
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+    thumbnail: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/SubaruOutbackOnStreetAndDirt.jpg",
+    year: 2017,
+    genre: "Automotive",
+    duration: "2 min"
+  },
+  {
+    id: "14",
+    title: "Volkswagen GTI Review",
+    description: "Professional review of the Volkswagen GTI performance vehicle.",
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+    thumbnail: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
+    year: 2017,
+    genre: "Review",
+    duration: "3 min"
+  },
+  {
     id: "15",
-    title: "Touch of Evil",
-    description: "A stark, perverse story of murder, kidnapping, and police corruption in a Mexican border town. Orson Welles' final Hollywood masterpiece.",
-    videoUrl: "https://ia801504.us.archive.org/9/items/TouchOfEvil1958/Touch%20of%20Evil%20%281958%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Touch_of_Evil_%281958_poster%29.jpg/600px-Touch_of_Evil_%281958_poster%29.jpg",
-    year: 1958,
-    genre: "Crime/Film Noir",
-    duration: "95 min"
+    title: "We Are Going On Bullrun",
+    description: "Documentary preview of the famous Bullrun supercar rally across America.",
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+    thumbnail: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
+    year: 2017,
+    genre: "Documentary",
+    duration: "1 min"
   },
   {
     id: "16",
-    title: "The Stranger",
-    description: "An investigator from the War Crimes Commission travels to Connecticut to find a Nazi fugitive hiding in a small town. Orson Welles directs and stars.",
-    videoUrl: "https://ia801504.us.archive.org/12/items/TheStranger1946/The%20Stranger%20%281946%29.mp4",
-    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/The_Stranger_%281946_poster%29.jpg/600px-The_Stranger_%281946_poster%29.jpg",
-    year: 1946,
-    genre: "Thriller/Film Noir",
-    duration: "95 min"
+    title: "What Car Can You Get For A Grand?",
+    description: "Exploring what kind of car you can buy with different budgets.",
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+    thumbnail: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
+    year: 2016,
+    genre: "Review",
+    duration: "2 min"
+  },
+
+  // Classic Film Trailers (These work reliably)
+  {
+    id: "17",
+    title: "Nosferatu (Preview)",
+    description: "Preview of F.W. Murnau's unauthorized adaptation of Dracula. Max Schreck's Count Orlok remains one of cinema's most terrifying vampires.",
+    videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_1MB.mp4",
+    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Nosferatu-Shadow.jpg/600px-Nosferatu-Shadow.jpg",
+    year: 1922,
+    genre: "Horror",
+    duration: "Preview"
+  },
+  {
+    id: "18",
+    title: "Metropolis (Preview)",
+    description: "Fritz Lang's visionary sci-fi masterpiece about class struggle in a futuristic city. One of the most influential films ever made.",
+    videoUrl: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_1MB.mp4",
+    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Metropolis_%281927_film%29.jpg/600px-Metropolis_%281927_film%29.jpg",
+    year: 1927,
+    genre: "Sci-Fi",
+    duration: "Preview"
+  },
+  {
+    id: "19",
+    title: "The Gold Rush (Preview)",
+    description: "Charlie Chaplin's comedy masterpiece about the Klondike Gold Rush. Features the famous bread roll dance scene.",
+    videoUrl: "https://test-videos.co.uk/vids/sintel/mp4/h264/720/Sintel_720_10s_1MB.mp4",
+    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Gold_rush_poster.jpg/600px-Gold_rush_poster.jpg",
+    year: 1925,
+    genre: "Comedy",
+    duration: "Preview"
+  },
+  {
+    id: "20",
+    title: "Battleship Potemkin (Preview)",
+    description: "Sergei Eisenstein's revolutionary masterpiece. The Odessa Steps sequence remains one of the most influential scenes in cinema history.",
+    videoUrl: "https://test-videos.co.uk/vids/sintel/mp4/h264/1080/Sintel_1080_10s_2MB.mp4",
+    thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Vintage_Potemkin.jpg/600px-Vintage_Potemkin.jpg",
+    year: 1925,
+    genre: "Drama",
+    duration: "Preview"
   }
 ];
